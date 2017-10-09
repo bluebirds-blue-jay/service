@@ -1,0 +1,39 @@
+{
+  "name": "@bluejay/service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require ./node_modules/ts-node/register --require ./test/setup.js ./test/**/*.test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluebirds-blue-jay/service.git"
+  },
+  "author": "Sylvain Estevez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bluebirds-blue-jay/service/issues"
+  },
+  "homepage": "https://github.com/bluebirds-blue-jay/service#readme",
+  "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.43",
+    "chai": "^4.1.2",
+    "inversify": "^4.3.0",
+    "mocha": "^4.0.1",
+    "reflect-metadata": "^0.1.10",
+    "ts-node": "^3.3.0",
+    "typedoc": "^0.9.0"
+  },
+  "peerDependencies": {
+    "inversify": "^4.3.0"
+  },
+  "dependencies": {
+    "@types/colors": "^1.1.3",
+    "@types/stringify-object": "^3.1.1",
+    "colors": "^1.1.2",
+    "npmlog": "^4.1.2",
+    "stringify-object": "^3.2.1"
+  }
+}
