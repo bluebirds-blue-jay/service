@@ -3,9 +3,10 @@ import { TSubscriptionHandler } from '../types/subscription-handler';
 import * as stringify from 'stringify-object';
 import * as Colors from 'colors';
 import * as NPMLog from 'npmlog';
+import { IService } from '../interfaces/service';
 
 @injectable()
-export class Service {
+export class Service implements IService {
   private subscriptions: Map<string, Set<TSubscriptionHandler>>;
 
   public constructor() {
