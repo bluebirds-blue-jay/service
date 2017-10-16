@@ -2,8 +2,8 @@ import { injectable } from 'inversify';
 import { TSubscriptionHandler } from '../types/subscription-handler';
 import * as stringify from 'stringify-object';
 import * as Colors from 'colors';
-import * as NPMLog from 'npmlog';
 import { IService } from '../interfaces/service';
+import { logger } from '../utils/logger';
 
 @injectable()
 export class Service implements IService {
@@ -26,7 +26,7 @@ export class Service implements IService {
       const stack = new Error(message).stack.split('\n').splice(2).join('\n');
       const dataPart = data ? stringify(data, { inlineCharacterLimit: Infinity }) : '';
       const formattedMessage = `${Colors.blue(this.constructor.name)} ${message} ${dataPart} \n${stack}`;
-      NPMLog.warn(formattedMessage);
+      logger.debug(formattedMessage);
     }
   }
 
