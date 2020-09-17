@@ -1,8 +1,8 @@
-import { injectable } from 'inversify';
-import { TSubscriptionHandler } from '../types/subscription-handler';
-import * as stringify from 'stringify-object';
 import * as Colors from 'colors';
+import { injectable } from 'inversify';
+import * as stringify from 'stringify-object';
 import { IService } from '../interfaces/service';
+import { TSubscriptionHandler } from '../types/subscription-handler';
 import { logger } from '../utils/logger';
 
 @injectable()
@@ -23,7 +23,8 @@ export class Service implements IService {
 
   protected warn(condition: boolean, message: string, data?: object) {
     if (condition) {
-      const stack = new Error(message).stack.split('\n').splice(2).join('\n');
+      const error = new Error(message);
+      const stack = error.stack ? error.stack.split('\n').splice(2).join('\n') : undefined;
       const dataPart = data ? stringify(data, { inlineCharacterLimit: Infinity }) : '';
       const formattedMessage = `${Colors.blue(this.constructor.name)} ${message} ${dataPart} \n${stack}`;
       logger.debug(formattedMessage);

@@ -1,4 +1,6 @@
-import { Service } from '../../';
+import { expect } from 'chai';
+
+import { Service } from '../../src';
 
 describe('Service', function () {
   describe('.subscribe()', function () {
