@@ -1,3 +1,7 @@
+# *DISCONTINUED: do not use.*
+
+------------------------
+
 # Service
 
 [![npm](https://img.shields.io/npm/v/@bluejay/service.svg?style=flat-square)](https://www.npmjs.com/package/@bluejay/service)
